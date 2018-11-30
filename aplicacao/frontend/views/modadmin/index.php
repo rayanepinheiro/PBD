@@ -60,6 +60,16 @@ $this->title = 'iWorkflow';
                     '">Cadastrar</a></p>';
                 ?>
             </div>
+
+            <div class="col-lg-4">
+                <h2>Visualizar logs</h2>
+
+                <?php
+                    echo '<p><a class="btn btn-lg btn-success" href="'.
+                    $caminho = $url = Url::to(['log/index']).
+                    '">Visualizar</a></p>';
+                ?>
+            </div>
         </div>
     </div>
 </div>

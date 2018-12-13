@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+// use app\models\Log;
 
 /**
  * This is the model class for table "log".
@@ -42,9 +43,21 @@ class Log extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'tipo_log' => 'Tipo Log',
-            'descricao_evento' => 'Descricao Evento',
-            'created_at' => 'Created At',
+            'tipo_log' => 'Tipo do Log',
+            'descricao_evento' => 'Descrição do Log',
+            'created_at' => 'Data de criação',
         ];
+    }
+
+    public function registraLog($tipo_log, $descricao_evento)
+    {
+       // $log = new Log();
+
+       $log->tipo_log = $tipo_log;
+       $log->descricao_evento = $descricao_evento;
+       $log->created_at = date('d-m-Y');
+       $log->save();
+
+       return true;
     }
 }

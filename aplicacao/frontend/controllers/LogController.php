@@ -124,4 +124,26 @@ class LogController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+
+    public function actionRegistraLog($tipo_log, $descricao_evento)
+    {
+        $model = new Log();
+
+        // $aux = $id_atividade;
+
+
+
+        return $model->registraLog($tipo_log, $descricao_evento);
+
+        /*if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            if ($model->aprovaProjeto($model->id_projeto)){
+                return $this->redirect('viewprofessor', ['model' => $this->findModel($id_projeto)]);
+            }
+        } /*else {
+            return $this->render('aprova', [
+                'model' => $model,
+            ]);
+        }*/
+    }
 }
